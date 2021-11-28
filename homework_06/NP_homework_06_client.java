@@ -4,7 +4,7 @@ import java.net.ServerSocket;
 import java.net.Socket;
 import java.io.*;
 
-public class NP_homerwork_06_client {
+public class NP_homework_06_client {
     public static void main(String[] args) {
         try {
             Socket socket =new Socket("localhost",8080);
