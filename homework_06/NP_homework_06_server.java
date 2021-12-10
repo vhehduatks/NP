@@ -3,14 +3,14 @@ import java.net.*;
 import java.io.*;
 public class NP_homework_06_server {
     public static void main(String[] args) {
-		int port;
+		// int port;
+		// try {
+		// 	port = Integer.parseInt(args[0]);
+		// } catch (Exception ex) {
+		// 	port = 0;
+		// }
 		try {
-			port = Integer.parseInt(args[0]);
-		} catch (Exception ex) {
-			port = 0;
-		}
-		try {
-			ServerSocket server = new ServerSocket(port, 1);
+			ServerSocket server = new ServerSocket(8080, 1);
 			System.out.println("Listening for connections on port " + server.getLocalPort());
 			while (true) {
 				Socket connection = server.accept();
@@ -49,10 +49,11 @@ class InputThread extends Thread {
 	}
 	public void run() {
 		try {
-			int i = in.read();
-			while (i != -1) {
-				System.out.write(i);
-				i = in.read();
+			BufferedReader b = new BufferedReader(new InputStreamReader(new BufferedInputStream(in)));
+			// int i = in.read();
+			String terminalout=null;
+			while ((terminalout=b.readLine())!=null) {
+				System.out.println("client : "+terminalout);
 			}
 		} catch (SocketException ex) {
 			// output thread closed the socket
@@ -67,9 +68,9 @@ class InputThread extends Thread {
 }
 
 class OutputThread extends Thread {
-	private Writer out;
+	PrintWriter out;
 	public OutputThread(OutputStream out) {
-		this.out = new OutputStreamWriter(out);
+		this.out = new PrintWriter(out,true);
 	}
 	public void run() {
 		String line;
@@ -77,15 +78,16 @@ class OutputThread extends Thread {
 		try {
 			line = in.readLine();
 			while (!(line.equals("."))) {
-				out.write(line + "\r\n");
-				out.flush();
+				// out.write(line + "\r\n");
+				// out.flush();
+				out.println(line);
 				line = in.readLine();
 			}
 		} catch (IOException ex) {
 		}
 		try {
 			out.close();
-		} catch (IOException ex) {
+		} catch (Exception ex) {
 		}
 	}
 }

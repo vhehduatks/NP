@@ -1,0 +1,74 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+
+
+		{
+			"type": "java",
+			"name": "Launch NP_homework_06_client",
+			"request": "launch",
+		
+			"mainClass": "homework_06.NP_homework_06_client",
+			"projectName": "NP_d77e320e"
+		},
+		{
+			"type": "java",
+			"name": "Launch NP_homework_06_server",
+			"request": "launch",
+			"mainClass": "homework_06.NP_homework_06_server",
+			"projectName": "NP_d77e320e",
+			"args": [
+				"8080"
+			]
+		},
+		{
+			"type": "java",
+			"name": "Launch NP_homework_04",
+			"request": "launch",
+			"mainClass": "homework_04.NP_homework_04",
+			"projectName": "NP_d77e320e"
+		},
+		{
+			"type": "java",
+			"name": "Launch test",
+			"request": "launch",
+			"mainClass": "test",
+			"projectName": "NP_d77e320e"
+		},
+		{
+			"type": "java",
+			"name": "Launch NP_homework_02",
+			"request": "launch",
+			"mainClass": "homework_02.NP_homework_02",
+			"projectName": "NP_d77e320e"
+		},
+		{
+			"type": "java",
+			"name": "Launch Current File",
+			"request": "launch",
+			"mainClass": "${file}"
+		},
+		{
+			"type": "java",
+			"name": "Launch NP_homework_01",
+			"request": "launch",
+			"mainClass": "homework_01.NP_homework_01",
+			"projectName": "NP_d77e320e",
+			"args": [
+				"AHA SRS.docx",
+				"AHA SRS_copy.docx"
+			]
+		},
+			
+	],
+	"compounds": [
+		{
+			"name": "Compound",
+			"configurations": ["Launch NP_homework_06_server","Launch NP_homework_06_client"]
+		}
+	]
+
+}

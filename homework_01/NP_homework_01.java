@@ -6,8 +6,8 @@ public class NP_homework_01 {
     public static void main(String[] args) {
 
         try {
-            // file_copy.func(args[0], args[1],1);
-            // write_print.func("number1.txt");
+            // file_copy.func1(args[0], args[1],200);
+            // write_print.func1("number1.txt");
             // write_print.func3("number1.txt");
             // write_print.func4("number2.txt");
             // write_print.func6("number2.txt");
